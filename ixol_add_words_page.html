@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Ixol Words</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and background */
+        body {
+            font-family: 'Lato', sans-serif; /* Default body font */
+            background-color: #003E87; /* Dark blue background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Belleza', sans-serif; /* Headers font */
+        }
+        /* Glassmorphic effect for the main container */
+        .glassmorphic-card {
+            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+            border-radius: 16px; /* Rounded corners */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        /* Ensure all text within the card is white */
+        .glassmorphic-card * {
+            color: white;
+        }
+        /* Override specific elements that need different colors or focus styles */
+        .glassmorphic-card label {
+            color: white; /* Ensure labels are white */
+        }
+        .glassmorphic-card input,
+        .glassmorphic-card textarea {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more transparent input background */
+            border-color: rgba(255, 255, 255, 0.3); /* Lighter border for inputs */
+            color: white; /* Input text color */
+        }
+        .glassmorphic-card input:focus,
+        .glassmorphic-card textarea:focus {
+            border-color: rgba(255, 255, 255, 0.7); /* Brighter border on focus */
+            outline: none;
+        }
+        /* Buttons need specific styling to stand out */
+        .glassmorphic-card button {
+            background-color: #4A90E2; /* A distinct blue for buttons */
+            color: white;
+            border: none;
+        }
+        .glassmorphic-card button:hover {
+            background-color: #357ABD; /* Darker blue on hover */
+        }
+        /* Message box styling for glassmorphic theme */
+        #messageBox {
+            background-color: rgba(255, 0, 0, 0.2); /* Semi-transparent red for error */
+            border-color: rgba(255, 0, 0, 0.4);
+            color: white;
+        }
+        #messageBox.bg-green-100 { /* Semi-transparent green for success */
+            background-color: rgba(0, 255, 0, 0.2);
+            border-color: rgba(0, 255, 0, 0.4);
+        }
+        #messageBox strong, #messageBox span {
+            color: white; /* Ensure message box text is white */
+        }
+        #messageBox svg {
+            fill: white; /* Ensure close button icon is white */
+        }
+        /* Navigation links color adjustment */
+        nav a {
+            color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for nav links */
+        }
+        nav a:hover {
+            color: white; /* Solid white on hover */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="glassmorphic-card p-8 rounded-xl w-full max-w-2xl">
+        <h1 class="text-4xl font-extrabold text-center mb-6">Add New Ixol Words</h1>
+
+        <!-- Navigation Links -->
+        <nav class="mb-6 flex justify-center gap-4">
+            <a href="index.html" class="font-semibold transition duration-200">Translator</a>
+            <a href="ixol_add_words_page.html" class="font-semibold transition duration-200">Add Words</a>
+            <a href="ixol_word_list_page.html" class="font-semibold transition duration-200">Word List</a>
+        </nav>
+
+        <div class="mb-4">
+            <label for="englishWord" class="block text-lg font-semibold mb-2">English Word:</label>
+            <input type="text" id="englishWord"
+                   class="w-full p-3 rounded-lg focus:outline-none transition duration-200 text-lg"
+                   placeholder="e.g., 'tree'">
+        </div>
+
+        <div class="mb-4">
+            <label for="ixolWord" class="block text-lg font-semibold mb-2">Ixol Word:</label>
+            <input type="text" id="ixolWord"
+                   class="w-full p-3 rounded-lg focus:outline-none transition duration-200 text-lg"
+                   placeholder="e.g., 'kahoy'">
+        </div>
+
+        <div class="mb-6">
+            <label for="notes" class="block text-lg font-semibold mb-2">Notes (Optional):</label>
+            <textarea id="notes"
+                      class="w-full p-3 rounded-lg focus:outline-none transition duration-200 text-lg"
+                      placeholder="e.g., 'Similar to Tagalog/Bisaya word'"></textarea>
+        </div>
+
+        <button id="addWordBtn"
+                class="w-full font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Add Word
+        </button>
+
+        <div id="messageBox" class="hidden px-4 py-3 rounded-lg relative mt-4" role="alert">
+            <strong class="font-bold">Error:</strong>
+            <span id="messageText" class="block sm:inline"></span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="document.getElementById('messageBox').classList.add('hidden')">
+                <svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15L6.22 7.16a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.029a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.15 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const englishWordInput = document.getElementById('englishWord');
+        const ixolWordInput = document.getElementById('ixolWord');
+        const notesInput = document.getElementById('notes');
+        const addWordBtn = document.getElementById('addWordBtn');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+
+        // --- Cloudflare Worker URL ---
+        // IMPORTANT: This URL has been updated with your deployed Worker's URL.
+        const WORKER_URL = 'https://royal-credit-10e7.renjrence.workers.dev';
+
+        // Function to display messages (replaces alert())
+        function showMessage(message, type = 'error') {
+            messageText.textContent = message;
+            messageBox.classList.remove('hidden');
+            if (type === 'error') {
+                messageBox.classList.remove('bg-green-100', 'border-green-400', 'text-green-700');
+                messageBox.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
+            } else {
+                messageBox.classList.remove('bg-red-100', 'border-red-400', 'text-red-700');
+                messageBox.classList.add('bg-green-100', 'border-green-400');
+            }
+        }
+
+        // Event listener for adding a word
+        addWordBtn.addEventListener('click', async () => { // Made async
+            const english = englishWordInput.value.trim();
+            const ixol = ixolWordInput.value.trim();
+            const notes = notesInput.value.trim();
+
+            if (!english || !ixol) {
+                showMessage('Please enter both English and Ixol words.', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${WORKER_URL}/api/vocab/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ english, ixol, notes }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showMessage('Word added successfully!', 'success');
+                    englishWordInput.value = '';
+                    ixolWordInput.value = '';
+                    notesInput.value = '';
+                } else {
+                    showMessage(`Error: ${result.error || 'Failed to add word.'}`, 'error');
+                }
+            } catch (error) {
+                console.error("Error adding word via Cloudflare Worker:", error);
+                showMessage('An error occurred while connecting to the server. Please try again.', 'error');
+            }
+        });
+    </script>
+</body>
+</html>
