@@ -59,12 +59,6 @@
         .glassmorphic-card button:hover {
             background-color: #357ABD; /* Darker blue on hover */
         }
-        .glassmorphic-card button.bg-purple-600 { /* Specific style for the second button */
-            background-color: #9B59B6;
-        }
-        .glassmorphic-card button.bg-purple-600:hover {
-            background-color: #7D3C98;
-        }
         /* Message box styling for glassmorphic theme */
         #messageBox {
             background-color: rgba(255, 0, 0, 0.2); /* Semi-transparent red for error */
@@ -420,7 +414,7 @@
                     return;
                 }
                 // Ensure vocab is loaded before translating
-                await loadVocab();
+                await loadVocab(); // <--- ADDED THIS LINE
                 const translated = translateToIxol(input);
                 outputText.value = translated;
                 showMessage('Translation successful!', 'success');
@@ -438,7 +432,7 @@
                     return;
                 }
                 // Ensure vocab is loaded before translating
-                await loadVocab();
+                await loadVocab(); // <--- ADDED THIS LINE
                 const translated = translateToEnglish(input);
                 outputText.value = translated;
                 showMessage('Translation successful!', 'success');
