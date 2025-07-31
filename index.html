@@ -1,80 +1,452 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- FOR THE CURIOUS: This site was made by @thebarrytone. Don't tell my mom. -->
-    
-    <title>Motherfucking Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ixol Translator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and background */
+        body {
+            font-family: 'Lato', sans-serif; /* Default body font */
+            background-color: #003E87; /* Dark blue background */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Belleza', sans-serif; /* Headers font */
+        }
+        /* Basic styling for textareas to ensure they are visible and resizable */
+        textarea {
+            resize: vertical; /* Allow vertical resizing */
+            min-height: 100px; /* Minimum height */
+        }
+        /* Glassmorphic effect for the main container */
+        .glassmorphic-card {
+            background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+            border-radius: 16px; /* Rounded corners */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        /* Ensure all text within the card is white */
+        .glassmorphic-card * {
+            color: white;
+        }
+        /* Override specific elements that need different colors or focus styles */
+        .glassmorphic-card label {
+            color: white; /* Ensure labels are white */
+        }
+        .glassmorphic-card input,
+        .glassmorphic-card textarea {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more transparent input background */
+            border-color: rgba(255, 255, 255, 0.3); /* Lighter border for inputs */
+            color: white; /* Input text color */
+        }
+        .glassmorphic-card input:focus,
+        .glassmorphic-card textarea:focus {
+            border-color: rgba(255, 255, 255, 0.7); /* Brighter border on focus */
+            outline: none;
+        }
+        /* Buttons need specific styling to stand out */
+        .glassmorphic-card button {
+            background-color: #4A90E2; /* A distinct blue for buttons */
+            color: white;
+            border: none;
+        }
+        .glassmorphic-card button:hover {
+            background-color: #357ABD; /* Darker blue on hover */
+        }
+        .glassmorphic-card button.bg-purple-600 { /* Specific style for the second button */
+            background-color: #9B59B6;
+        }
+        .glassmorphic-card button.bg-purple-600:hover {
+            background-color: #7D3C98;
+        }
+        /* Message box styling for glassmorphic theme */
+        #messageBox {
+            background-color: rgba(255, 0, 0, 0.2); /* Semi-transparent red for error */
+            border-color: rgba(255, 0, 0, 0.4);
+            color: white;
+        }
+        #messageBox.bg-green-100 { /* Semi-transparent green for success */
+            background-color: rgba(0, 255, 0, 0.2);
+            border-color: rgba(0, 255, 0, 0.4);
+        }
+        #messageBox strong, #messageBox span {
+            color: white; /* Ensure message box text is white */
+        }
+        #messageBox svg {
+            fill: white; /* Ensure close button icon is white */
+        }
+        /* Navigation links color adjustment */
+        nav a {
+            color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for nav links */
+        }
+        nav a:hover {
+            color: white; /* Solid white on hover */
+        }
+    </style>
 </head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="glassmorphic-card p-8 rounded-xl w-full max-w-2xl">
+        <h1 class="text-4xl font-extrabold text-center mb-6">Ixol Translator</h1>
 
-<body>
-    <header>
-        <h1>This is a motherfucking website.</h1>
-        <aside>And it's fucking perfect.</aside>
-    </header>
-        
-        <h2>Seriously, what the fuck else do you want?</h2>
-        
-        <p>You probably build websites and think your shit is special. You think your 13 megabyte parallax-ative home page is going to get you some fucking Awwward banner you can glue to the top corner of your site. You think your 40-pound jQuery file and 83 polyfills give IE7 a boner because it finally has box-shadow. Wrong, motherfucker. Let me describe your perfect-ass website:</p>
-        
-        <ul>
-            <li>Shit's lightweight and loads fast</li>
-            <li>Fits on all your shitty screens</li>
-            <li>Looks the same in all your shitty browsers</li>
-            <li>The motherfucker's accessible to every asshole that visits your site</li>
-            <li>Shit's legible and gets your fucking point across (if you had one instead of just 5mb pics of hipsters drinking coffee)</li>
-        </ul>
-        
-        <h3>Well guess what, motherfucker:</h3>
-        
-        <p>You. Are. Over-designing. Look at this shit. It's a motherfucking website. Why the fuck do you need to animate a fucking trendy-ass banner flag when I hover over that useless piece of shit? You spent hours on it and added 80 kilobytes to your fucking site, and some motherfucker jabbing at it on their iPad with fat sausage fingers will never see that shit. Not to mention blind people will never see that shit, but they don't see any of your shitty shit.</p>
-        
-        <p>You never knew it, but this is your perfect website. Here's why.</p>
-        
-        <h2>It's fucking lightweight</h2>
-        
-        <p>This entire page weighs less than the gradient-meshed facebook logo on your fucking Wordpress site. Did you seriously load 100kb of jQuery UI just so you could animate the fucking background color of a div? You loaded all 7 fontfaces of a shitty webfont just so you could say "Hi." at 100px height at the beginning of your site? You piece of shit.</p>
-        
-        <h2>It's responsive</h2>
-        
-        <p>You dumbass. You thought you needed media queries to be responsive, but no. Responsive means that it responds to whatever motherfucking screensize it's viewed on. This site doesn't care if you're on an iMac or a motherfucking Tamagotchi.</p>
-        
-        <h2>It fucking works</h2>
-        
-        <p>Look at this shit. You can read it ... that is, if you can read, motherfucker. It makes sense. It has motherfucking hierarchy. It's using HTML5 tags so you and your bitch-ass browser know what the fuck's in this fucking site. That's semantics, motherfucker.</p>
-        
-        <p>It has content on the fucking screen. Your site has three bylines and link to your dribbble account, but you spread it over 7 full screens and make me click some bobbing button to show me how cool the jQuery ScrollTo plugin is.</p>
-        
-        <p>Cross-browser compatibility? Load this motherfucker in IE6. I fucking dare you.</p>
-        
-        <h2>This is a website. Look at it.  You've never seen one before.</h2>
-        
-        <p>Like the man who's never grown out his beard has no idea what his true natural state is, you have no fucking idea what a website is. All you have ever seen are shitty skeuomorphic bastardizations of what should be text communicating a fucking message. This is a real, naked website. Look at it. It's fucking beautiful.</p>
-        
-        <h3>Yes, this is fucking satire, you fuck</h3>
-        
-        <p>I'm not actually saying your shitty site should look like this. What I'm saying is that all the problems we have with websites are <strong>ones we create ourselves</strong>. Websites aren't broken by default, they are functional, high-performing, and accessible. You break them. You son-of-a-bitch.</p>
-        
-        <blockquote cite="https://www.vitsoe.com/us/about/good-design">"Good design is as little design as possible."<br>
-            - some German motherfucker
-        </blockquote>
-    
+        <!-- Navigation Links -->
+        <nav class="mb-6 flex justify-center gap-4">
+            <a href="index.html" class="font-semibold transition duration-200">Translator</a>
+            <a href="ixol_add_words_page.html" class="font-semibold transition duration-200">Add Words</a>
+            <a href="ixol_word_list_page.html" class="font-semibold transition duration-200">Word List</a>
+        </nav>
 
+        <div class="mb-6">
+            <label for="inputText" class="block text-lg font-semibold mb-2">Enter Text:</label>
+            <textarea id="inputText"
+                      class="w-full p-4 rounded-lg focus:outline-none transition duration-200 text-lg"
+                      placeholder="Type your English or Ixol text here..."></textarea>
+        </div>
 
-    
-    <!-- yes, I know...wanna fight about it? -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+            <button id="translateToIxolBtn"
+                    class="flex-1 font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                Translate to Ixol
+            </button>
+            <button id="translateToEnglishBtn"
+                    class="flex-1 bg-purple-600 hover:bg-purple-700 font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                Translate to English
+            </button>
+        </div>
+
+        <div class="mb-6">
+            <label for="outputText" class="block text-lg font-semibold mb-2">Translated Text:</label>
+            <textarea id="outputText"
+                      class="w-full p-4 rounded-lg text-lg"
+                      readonly
+                      placeholder="Your translation will appear here..."></textarea>
+        </div>
+
+        <div id="messageBox" class="hidden px-4 py-3 rounded-lg relative mt-4" role="alert">
+            <strong class="font-bold">Error:</strong>
+            <span id="messageText" class="block sm:inline"></span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" onclick="document.getElementById('messageBox').classList.add('hidden')">
+                <svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15L6.22 7.16a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.029a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.15 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
+    </div>
+
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-45956659-1', 'motherfuckingwebsite.com');
-      ga('send', 'pageview');
+        // Get references to DOM elements
+        const inputText = document.getElementById('inputText');
+        const outputText = document.getElementById('outputText');
+        const translateToIxolBtn = document.getElementById('translateToIxolBtn');
+        const translateToEnglishBtn = document.getElementById('translateToEnglishBtn');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+
+        // --- Cloudflare Worker URL ---
+        // IMPORTANT: This URL has been updated with your deployed Worker's URL.
+        const WORKER_URL = 'https://royal-credit-10e7.renjrence.workers.dev';
+
+        let ixolVocabMap = new Map(); // Map for English to Ixol lookup
+        let englishVocabMap = new Map(); // Map for Ixol to English lookup
+
+        // Function to load vocabulary from Cloudflare Worker
+        async function loadVocab() {
+            try {
+                const response = await fetch(`${WORKER_URL}/api/vocab/get`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const vocabArray = await response.json();
+
+                ixolVocabMap.clear();
+                englishVocabMap.clear();
+                vocabArray.forEach(entry => {
+                    if (entry.english) ixolVocabMap.set(entry.english.toLowerCase(), entry.ixol.toLowerCase());
+                    if (entry.ixol) englishVocabMap.set(entry.ixol.toLowerCase(), entry.english.toLowerCase());
+                });
+                console.log("Vocabulary loaded from Cloudflare Worker:", vocabArray);
+            } catch (e) {
+                console.error("Error loading vocabulary from Cloudflare Worker:", e);
+                showMessage('Error loading vocabulary from server. Please try again later.', 'error');
+                // Optionally, you could fall back to a hardcoded defaultVocab here if the worker fails
+            }
+        }
+
+        // Function to display messages (replaces alert())
+        function showMessage(message, type = 'error') {
+            messageText.textContent = message;
+            messageBox.classList.remove('hidden');
+            if (type === 'error') {
+                messageBox.classList.remove('bg-green-100', 'border-green-400', 'text-green-700');
+                messageBox.classList.add('bg-red-100', 'border-red-400', 'text-red-700');
+            } else {
+                messageBox.classList.remove('bg-red-100', 'border-red-400', 'text-red-700');
+                messageBox.classList.add('bg-green-100', 'border-green-400');
+            }
+        }
+
+        // Function to clean and tokenize input text
+        function cleanAndTokenize(text) {
+            // Convert to lowercase, remove punctuation, and split by spaces
+            return text.toLowerCase().replace(/[.,!?;:]/g, '').split(/\s+/).filter(word => word.length > 0);
+        }
+
+        // Function to translate English to Ixol
+        function translateToIxol(englishText) {
+            const words = cleanAndTokenize(englishText);
+            let verb = '';
+            let subject = '';
+            let object = '';
+            let adjective = '';
+            let tenseParticle = '';
+            let isQuestion = false;
+            let otherWords = []; // To collect words not fitting the VSO structure
+
+            // Simple state machine for VSO and adjective placement
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+
+                // Handle tense particles and question markers first
+                if (word === 'will') {
+                    tenseParticle = 'ka';
+                    continue;
+                } else if (word === 'ate') {
+                    tenseParticle = 'na';
+                    verb = 'kanan'; // Translate 'ate' to 'na kanan'
+                    continue;
+                } else if (word === 'drank') {
+                    tenseParticle = 'na';
+                    verb = 'nomon'; // Translate 'drank' to 'na nomon'
+                    continue;
+                } else if (word === 'did' && (words[i+1] === 'you' || words[i+1] === 'i' || words[i+1] === 'he' || words[i+1] === 'she' || words[i+1] === 'they' || words[i+1] === 'person' || words[i+1] === 'people')) {
+                    tenseParticle = 'na'; // 'Did' as past tense marker for questions
+                    isQuestion = true;
+                    continue;
+                } else if (word === 'do' || word === 'does') {
+                    isQuestion = true; // 'Do/Does' as question marker
+                    continue;
+                }
+
+                // Translate word by word using the loaded vocabulary
+                let translatedWord = ixolVocabMap.get(word);
+
+                // Identify parts of speech for VSO reordering
+                if (['eat', 'drink'].includes(word) && !verb) { // Use English base forms for identification
+                    verb = translatedWord || word;
+                } else if (['i', 'me', 'you', 'he', 'she', 'it', 'they', 'person', 'people'].includes(word) && !subject) {
+                    subject = translatedWord || word;
+                } else if (['food', 'water', 'house'].includes(word) && !object) {
+                    object = translatedWord || word;
+                } else if (['good', 'hot', 'cold'].includes(word) && !adjective) {
+                    adjective = translatedWord || word;
+                } else if (translatedWord !== undefined && translatedWord !== '') {
+                    // Add other translated words directly if they don't fit VSO structure and are not empty
+                    otherWords.push(translatedWord);
+                } else if (translatedWord === undefined && !['is', 'are', 'a', 'an', 'the'].includes(word)) {
+                    // If not found in vocab and not an ignored word, keep original word (or add to otherWords)
+                    otherWords.push(word);
+                }
+            }
+
+            // Reconstruct sentence in VSO order
+            let finalIxolSentence = [];
+
+            if (isQuestion) {
+                finalIxolSentence.push('ba');
+            }
+            if (tenseParticle) {
+                finalIxolSentence.push(tenseParticle);
+            }
+            if (verb) {
+                finalIxolSentence.push(verb);
+            }
+            if (subject) {
+                finalIxolSentence.push(subject);
+            }
+            if (object) {
+                finalIxolSentence.push(object);
+            }
+            if (adjective) {
+                // Adjective comes after the noun it modifies. For simplicity, assume it modifies the object if present.
+                if (object) {
+                    const objectIndex = finalIxolSentence.indexOf(object);
+                    if (objectIndex !== -1) {
+                        finalIxolSentence.splice(objectIndex + 1, 0, adjective);
+                    } else {
+                        finalIxolSentence.push(adjective);
+                    }
+                } else {
+                    finalIxolSentence.push(adjective);
+                }
+            }
+
+            // Handle "what" questions specifically
+            if (englishText.toLowerCase().includes('what is this')) {
+                return 'unsay inay?';
+            } else if (englishText.toLowerCase().includes('what is')) {
+                return 'unsay';
+            }
+
+            // Append any other words that didn't fit the main VSO structure
+            otherWords.forEach(word => {
+                if (!finalIxolSentence.includes(word)) {
+                    finalIxolSentence.push(word);
+                }
+            });
+
+            return finalIxolSentence.join(' ').trim();
+        }
+
+        // Function to translate Ixol to English
+        function translateToEnglish(ixolText) {
+            const words = cleanAndTokenize(ixolText);
+            let englishWords = [];
+            let verb = '';
+            let subject = '';
+            let object = '';
+            let adjective = '';
+            let tenseParticle = '';
+            let isQuestion = false;
+            let otherWords = []; // To collect words not fitting the SVO structure
+
+            // Identify parts of speech and reorder for SVO (English)
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+
+                if (word === 'ba') {
+                    isQuestion = true;
+                    continue;
+                }
+                if (word === 'na') {
+                    tenseParticle = 'past';
+                    continue;
+                }
+                if (word === 'ka') {
+                    tenseParticle = 'future';
+                    continue;
+                }
+
+                const translatedWord = englishVocabMap.get(word);
+
+                if (['kanan', 'nomon'].includes(word) && !verb) {
+                    verb = translatedWord || word;
+                } else if (['akon', 'ikay', 'siya', 'silay', 'tawon', 'ma tawon'].includes(word) && !subject) {
+                    subject = translatedWord || word;
+                } else if (['pakan', 'tubig', 'balay', 'inay'].includes(word) && !object) {
+                    object = translatedWord || word;
+                } else if (['mabaw', 'inat', 'bugnaw'].includes(word) && !adjective) {
+                    adjective = translatedWord || word;
+                } else if (translatedWord !== undefined && translatedWord !== '') {
+                    // Add other translated words directly if they don't fit SVO structure and are not empty
+                    otherWords.push(translatedWord);
+                } else if (translatedWord === undefined) {
+                    // If not found in vocab, keep original word (or add to otherWords)
+                    otherWords.push(word);
+                }
+            }
+
+            // Reconstruct sentence in SVO order for English
+            let finalEnglishSentence = [];
+
+            if (subject) {
+                finalEnglishSentence.push(subject);
+            }
+
+            // Handle tense and verb
+            if (tenseParticle === 'past' && verb === 'eat') {
+                finalEnglishSentence.push('ate');
+            } else if (tenseParticle === 'past' && verb === 'drink') {
+                finalEnglishSentence.push('drank');
+            } else if (tenseParticle === 'future' && verb) {
+                finalEnglishSentence.push('will', verb);
+            } else if (verb) {
+                finalEnglishSentence.push(verb);
+            }
+
+            // Adjective comes before noun in English
+            if (adjective) {
+                finalEnglishSentence.push(adjective);
+            }
+            if (object) {
+                if (adjective) {
+                    // If adjective is present, insert object after it
+                    const adjIndex = finalEnglishSentence.indexOf(adjective);
+                    if (adjIndex !== -1) {
+                        finalEnglishSentence.splice(adjIndex + 1, 0, object);
+                    } else {
+                        finalEnglishSentence.push(object);
+                    }
+                } else {
+                    finalEnglishSentence.push(object);
+                }
+            }
+
+            // Handle "what is this"
+            if (ixolText.toLowerCase().includes('unsay inay')) {
+                return 'what is this?';
+            } else if (ixolText.toLowerCase().includes('unsay')) {
+                return 'what is';
+            }
+
+            // Append any other words that didn't fit the main SVO structure
+            otherWords.forEach(word => {
+                if (!finalEnglishSentence.includes(word)) {
+                    finalEnglishSentence.push(word);
+                }
+            });
+
+            let result = finalEnglishSentence.join(' ').trim();
+
+            // Add question mark if it was a question
+            if (isQuestion) {
+                result += '?';
+            }
+
+            return result;
+        }
+
+        // Initialize vocabulary on page load
+        document.addEventListener('DOMContentLoaded', loadVocab);
+
+        // Event listeners for buttons
+        translateToIxolBtn.addEventListener('click', async () => { // Made async
+            try {
+                const input = inputText.value.trim();
+                if (input === '') {
+                    showMessage('Please enter text to translate.', 'error');
+                    return;
+                }
+                // Ensure vocab is loaded before translating
+                await loadVocab();
+                const translated = translateToIxol(input);
+                outputText.value = translated;
+                showMessage('Translation successful!', 'success');
+            } catch (error) {
+                console.error("Error during Ixol translation:", error);
+                showMessage('An error occurred during translation to Ixol. Please try again.', 'error');
+            }
+        });
+
+        translateToEnglishBtn.addEventListener('click', async () => { // Made async
+            try {
+                const input = inputText.value.trim();
+                if (input === '') {
+                    showMessage('Please enter text to translate.', 'error');
+                    return;
+                }
+                // Ensure vocab is loaded before translating
+                await loadVocab();
+                const translated = translateToEnglish(input);
+                outputText.value = translated;
+                showMessage('Translation successful!', 'success');
+            } catch (error) {
+                console.error("Error during English translation:", error);
+                showMessage('An error occurred during translation to English. Please try again.', 'error');
+            }
+        });
     </script>
-    
 </body>
 </html>
