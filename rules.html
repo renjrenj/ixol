@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ixol Language Structure</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font and background */
+        body {
+            font-family: 'Lato', sans-serif; /* Default body font */
+            background-color: #003E87; /* Dark blue background */
+            color: white; /* All text white */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Belleza', sans-serif; /* Headers font */
+            color: white;
+        }
+        /* Ensure all text within the card is white */
+        .glassmorphic-card * {
+            color: white;
+        }
+        /* Navigation links color adjustment */
+        nav a {
+            color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for nav links */
+        }
+        nav a:hover {
+            color: white; /* Solid white on hover */
+        }
+        /* Responsive margins and maximum width for content */
+        .content-container {
+            max-width: 800px; /* Max width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem; /* Padding on smaller screens */
+        }
+        /* Adjust padding for larger screens */
+        @media (min-width: 640px) {
+            .content-container {
+                padding: 2rem;
+            }
+        }
+        /* Adjust padding for even larger screens to create more pronounced side margins */
+        @media (min-width: 1024px) {
+            .content-container {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4">
+    <div class="content-container">
+        <h1 class="text-4xl font-extrabold text-center mb-6">Structure of Ixol</h1>
+
+        <!-- Navigation Links -->
+        <nav class="mb-10 flex justify-center gap-4">
+            <a href="index.html" class="font-semibold transition duration-200">Translator</a>
+            <a href="ixol_add_words_page.html" class="font-semibold transition duration-200">Add Words</a>
+            <a href="ixol_word_list_page.html" class="font-semibold transition duration-200">Word List</a>
+            <a href="ixol_structure_page.html" class="font-semibold transition duration-200">Ixol Structure</a>
+        </nav>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold mb-4">The Ixol Alphabet and Pronunciation</h2>
+            <p class="mb-4">Ixol uses the Latin alphabet and is **fully phonetic** – every letter is pronounced consistently, and words are read exactly as they are spelled.</p>
+
+            <h3 class="text-2xl font-bold mb-2">Consonants</h3>
+            <p class="mb-4">Most consonants in Ixol are pronounced similarly to their English equivalents, but with a slight Filipino language feel:</p>
+            <ul class="list-disc list-inside ml-4 space-y-2">
+                <li><strong>b, d, f, g, h, k, l, m, n, p, s, t, v, w, y</strong>: Generally pronounced like their English counterparts.</li>
+                <li><strong>g</strong>: Always a hard 'g' sound, like in "go".</li>
+                <li><strong>s</strong>: Always a soft 's' sound, like in "snake".</li>
+                <li><strong>w</strong>: Like the 'w' in "water".</li>
+                <li><strong>y</strong>: Like the 'y' in "yes".</li>
+                <li><strong>j</strong>: Pronounced like the 'j' in "jam" or the 'dy' sound in "soldier".</li>
+                <li><strong>r</strong>: Can be a soft tap or a slight roll of the tongue, similar to the 'r' in many Filipino languages or Spanish.</li>
+                <li><strong>x</strong>: Pronounced like 'ks', as in "box".</li>
+                <li><strong>Combinations - ng</strong>: When 'n' and 'g' appear together, they form the 'ng' sound as in "sing" or "finger". This is a very common sound in Filipino languages.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Vowels</h3>
+            <p class="mb-4">The vowels in Ixol are pronounced clearly and consistently, similar to how they sound in Spanish or Filipino languages:</p>
+            <ul class="list-disc list-inside ml-4 space-y-2">
+                <li><strong>a</strong>: like the 'a' in **fa**ther</li>
+                <li><strong>e</strong>: like the 'e' in b**e**d</li>
+                <li><strong>i</strong>: like the 'ee' in m**ee**t</li>
+                <li><strong>o</strong>: like the 'o' in g**o**</li>
+                <li><strong>u</strong>: like the 'oo' in m**oo**n</li>
+            </ul>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold mb-4">Basic Grammar: Simple Structure</h2>
+            <p class="mb-4">Ixol's grammar aims for simplicity, focusing on clear communication.</p>
+
+            <h3 class="text-2xl font-bold mb-2">Word Order</h3>
+            <p class="mb-4">Ixol primarily uses a **Verb-Subject-Object (VSO)** word order. This means the verb usually comes first, followed by the subject, and then the object. This is a common structure in Filipino languages.</p>
+            <p class="italic">Example: "Eat I food." (Instead of "I eat food.")</p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Nouns</h3>
+            <p class="mb-4">Nouns in Ixol are straightforward. They do not have grammatical gender.</p>
+            <p class="font-semibold mb-2">Pluralization:</p>
+            <p>To indicate a plural noun, we use the particle **ma** placed <em>before</em> the noun.</p>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+                <li><strong>adlaw</strong> (day) &rarr; <strong>ma adlaw</strong> (days)</li>
+                <li><strong>pakan</strong> (food) &rarr; <strong>ma pakan</strong> (foods)</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Verbs</h3>
+            <p class="mb-4">Verbs in Ixol start simply, focusing on the action. To indicate tense, we use small particles placed <em>before</em> the verb.</p>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Present Tense</strong>: Use the base form of the verb.</li>
+                <li><strong>Past Tense</strong>: Add **na** before the verb.</li>
+                <li><strong>Future Tense</strong>: Add **ka** before the verb.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Pronouns</h3>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Akon</strong> (I/Me)</li>
+                <li><strong>Ikay</strong> (You)</li>
+                <li><strong>Siya</strong> (He/She/It)</li>
+                <li><strong>Silay</strong> (They)</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Adjectives</h3>
+            <p class="mb-4">Adjectives in Ixol generally come <em>after</em> the noun they describe. This is a common pattern in Filipino languages.</p>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+                <li><strong>pakan mabaw</strong> (good food)</li>
+                <li><strong>tubig inat</strong> (hot water)</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-6 mb-2">Questions</h3>
+            <p class="mb-4">To form a simple yes/no question, place the particle **ba** at the beginning of the sentence. For "what" questions, use **unsay**.</p>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Ba kanan ikay pakan?</strong> (Do you eat food?)</li>
+                <li><strong>Unsay inay?</strong> (What is this?)</li>
+            </ul>
+        </section>
+
+    </div>
+</body>
+</html>
